@@ -1,7 +1,7 @@
 {
     "name": "shiyun/php-annotation",
     "description": "php annotation for shiyun",
-    "version": "",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "ctocode",
