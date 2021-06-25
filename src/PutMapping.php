@@ -2,13 +2,18 @@
 
 namespace shiyun\annotation;
 
+use Doctrine\Common\Annotations\Annotation;
+use Doctrine\Common\Annotations\Annotation\Enum;
+use Doctrine\Common\Annotations\Annotation\Target;
+use shiyun\annotation\route\Rule;
+
 /**
  * 注册路由
- * @package topthink\annotation
+ * @package shiyun\annotation
  * @Annotation
  * @Target({"METHOD","CLASS"})
  */
-final class PutMapping
+final class PutMapping extends Rule
 {
     /**
      * @Required()

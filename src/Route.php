@@ -9,23 +9,17 @@ use shiyun\annotation\route\Rule;
 
 /**
  * 注册路由
- * @package shiyun\annotation
+ * @package topshiyun\annotation
  * @Annotation
  * @Target({"METHOD","CLASS"})
  */
-final class RequestMapping extends Rule
+final class Route extends Rule
 {
     /**
      * @Required()
      * @var string
      */
-    public $path;
-
-    /**
-     * @Required()
-     * @var string
-     */
-    public $value;
+    public $route;
 
 
     // /**

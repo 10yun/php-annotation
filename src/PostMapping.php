@@ -2,13 +2,18 @@
 
 namespace shiyun\annotation;
 
+use Doctrine\Common\Annotations\Annotation;
+use Doctrine\Common\Annotations\Annotation\Enum;
+use Doctrine\Common\Annotations\Annotation\Target;
+use shiyun\annotation\route\Rule;
+
 /**
  * 注册路由
- * @package topthink\annotation
+ * @package shiyun\annotation
  * @Annotation
  * @Target({"METHOD","CLASS"})
  */
-final class PostMapping
+final class PostMapping extends Rule
 {
     /**
      * @Required()
@@ -31,10 +36,10 @@ final class PostMapping
 
     /**
      * 请求类型
-     * @Enum({"GET","POST","PUT","DELETE","PATCH","OPTIONS","HEAD"})
+     * @Enum({"POST","HEAD"})
      * @var string
      */
-    public $method = "*";
+    public $method = "POST";
 
     /**
      * @var array

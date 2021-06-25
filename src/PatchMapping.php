@@ -13,7 +13,7 @@ use shiyun\annotation\route\Rule;
  * @Annotation
  * @Target({"METHOD","CLASS"})
  */
-final class RequestMapping extends Rule
+final class PatchMapping extends Rule
 {
     /**
      * @Required()
