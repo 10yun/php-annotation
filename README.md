@@ -1,7 +1,24 @@
 # php-annotation
 
-
 ## php注解
+
+- 修改镜像源  
+看需求
+
+```sh
+# 取消
+composer config -g --unset repos.packagist
+# 国外
+composer config -g repo.packagist composer https://packagist.phpcomposer.com
+# 阿里
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+```
+
+- 引入
+
+```sh
+composer require shiyun/php-annotation
+```
 
 支持
 
