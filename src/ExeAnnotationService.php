@@ -1,6 +1,6 @@
 <?php
 
-namespace think\annotation;
+namespace shiyun\annotation;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
