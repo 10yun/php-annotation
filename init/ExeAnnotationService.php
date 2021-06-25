@@ -8,8 +8,9 @@ use Doctrine\Common\Annotations\Reader;
 use think\App;
 use think\Cache;
 use think\Config;
+use think\Service as BaseService;
 
-class Service extends \think\Service
+class ExeAnnotationService extends BaseService
 {
     use InteractsWithRoute, InteractsWithInject, InteractsWithModel;
 
