@@ -38,17 +38,17 @@ composer require shiyun/php-annotation
 
 - 2.1 在 `app/service.php` 中注册 
 ```php
-    \shiyun\service\ExeAnnotationService::class,
+    \shiyun\annotation\ExtAnnotationService::class,
 ```
 
 
 - 2.2 或者 
 
-复制 ` init/ExeAnnotationService.php ` 到 项目 `/app/service/`中  
+复制 ` init/ExtAnnotationService.php ` 到 项目 `/app/service/`中  
 然后 在 `app/service.php` 中注册 
 
 ```php
-    \shiyun\service\ExeAnnotationService::class,
+    \shiyun\annotation\ExtAnnotationService::class,
 ```
 
 

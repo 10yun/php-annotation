@@ -10,7 +10,7 @@ use think\Cache;
 use think\Config;
 use think\Service as BaseService;
 
-class ExeAnnotationService extends BaseService
+class ExtAnnotationService extends BaseService
 {
     use InteractsWithRoute, InteractsWithInject, InteractsWithModel;
 
