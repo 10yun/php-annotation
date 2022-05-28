@@ -1,9 +1,17 @@
 # php-annotation
 
+**简要**
+
+- php版本[![Php Version](https://img.shields.io/badge/php-%3E=7.4-brightgreen.svg)](https://secure.php.net/)
+- 遵循 PSR-11 规范的容器组件
+
+**支持**
+
 - 支持php7注释
 - 支持php8注解
-- 简化版swagger接口文档
-- 自动生成 OpenAPI 文档
+- 简化版 swagger 接口文档
+- 自动生成 swagger - OpenAPI 文档
+
 
 ## php注解
 
@@ -25,13 +33,7 @@ composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 composer require shiyun/php-annotation
 ```
 
-- 支持路由注解 [查看手册](./docs/路由注解.md)
-  
-- 支持验证注解
-- 支持服务注解
-
-
-
+ 
 ### 1、 添加配置
 
 复制 ` init/config/annotation.php ` 到 项目 `/config/`中
@@ -50,8 +52,15 @@ composer require shiyun/php-annotation
 然后 在 `app/service.php` 中注册 
 
 ```php
-    \shiyun\annotation\ExtAnnotationService::class,
+    \app\service\ExtAnnotationService::class,
 ```
+
+### 3、使用
+
+
+- 支持路由注解 [查看手册](./docs/路由注解.md)
+- 支持验证注解 [查看手册](./docs/验证注解.md)
+- 支持服务注解 [查看手册](./docs/服务注解.md)
 
 
 
