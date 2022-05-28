@@ -3,6 +3,7 @@
     "description": "php7、8注解,annotation for shiyun ",
     "version": "1.0.1",
     "license": "Apache-2.0",
+    "license2": "MulanPSL-2.0",
     "type": "library",
     "authors": [
         {
@@ -12,18 +13,38 @@
     ],
     "homepage": "https://github.com/10yun/php-annotation",
     "minimum-stability": "dev",
+    "minimum-stability2": "stable",
     "require": {
-        "topthink/framework": "^6.0",
-        "doctrine/annotations": "^1.6",
-        "php-di/phpdoc-reader": "^2.1",
-        "symfony/class-loader": "~3.2.0"
+        "php": "^8.0",
+        "topthink/framework": "^6.0.12"
     },
     "require-dev": {
-        "topthink/think-ide-helper": "v1.0"
+        "php": ">=8.0",
+        "php2": ">=8.1",
+        "psr/container": "~1.0",
+        "phpunit/phpunit": "^9.5",
+        "workerman/webman-framework": ">=1.0",
+        "workerman/validation": "^3.0",
+        "swagger-api/swagger-ui": "^3.48"
     },
     "autoload": {
         "psr-4": {
             "shiyun\\annotation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "think": {
+            "config": {
+                "sy-annotation": "src/config/config.php"
+            },
+            "services": [
+                "shiyun\\annotation\\RouteService"
+            ]
         }
     }
 }

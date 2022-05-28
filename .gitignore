@@ -1,2 +1,8 @@
 /.idea
 /vendor/
+/vendor
+/.git
+/app
+composer.lock
+phpunit.xml
+.phpunit.result.cache
