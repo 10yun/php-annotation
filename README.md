@@ -1,5 +1,10 @@
 # php-annotation
 
+- 支持php7注释
+- 支持php8注解
+- 简化版swagger接口文档
+- 自动生成 OpenAPI 文档
+
 ## php注解
 
 - 修改镜像源  
@@ -20,16 +25,11 @@ composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 composer require shiyun/php-annotation
 ```
 
-支持
+- 支持路由注解 [查看手册](./docs/路由注解.md)
+  
+- 支持验证注解
+- 支持服务注解
 
-| 注解类型        | 类型 | 说明        |
-| :-------------- | :--- | :---------- |
-| @RequestMapping | 类型 | request注解 |  |
-| @GetMapping     | 类型 | get注解     |  |
-| @PostMapping    | 类型 | post注解    |  |
-| @PutMapping     | 类型 | put注解     |  |
-| @PatchMapping   | 类型 | patch注解   |  |
-| @DeleteMapping  | 类型 | delete注解  |  |
 
 
 ### 1、 添加配置

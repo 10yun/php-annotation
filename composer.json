@@ -1,14 +1,17 @@
 {
     "name": "shiyun/php-annotation",
-    "description": "php8 注解annotation for shiyun ",
+    "description": "php7、8注解,annotation for shiyun ",
     "version": "1.0.1",
     "license": "Apache-2.0",
+    "type": "library",
     "authors": [
         {
             "name": "ctocode",
             "email": "343196936@qq.com"
         }
     ],
+    "homepage": "https://github.com/10yun/php-annotation",
+    "minimum-stability": "dev",
     "require": {
         "topthink/framework": "^6.0",
         "doctrine/annotations": "^1.6",
