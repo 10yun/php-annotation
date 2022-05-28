@@ -25,9 +25,11 @@ composer require shiyun/php-annotation
 | 注解类型        | 类型 | 说明        |
 | :-------------- | :--- | :---------- |
 | @RequestMapping | 类型 | request注解 |  |
-| @getMapping     | 类型 | get注解     |  |
-| @postMapping    | 类型 | post注解    |  |
-| @putMapping     | 类型 | put注解     |  |
+| @GetMapping     | 类型 | get注解     |  |
+| @PostMapping    | 类型 | post注解    |  |
+| @PutMapping     | 类型 | put注解     |  |
+| @PatchMapping   | 类型 | patch注解   |  |
+| @DeleteMapping  | 类型 | delete注解  |  |
 
 
 ### 1、 添加配置
