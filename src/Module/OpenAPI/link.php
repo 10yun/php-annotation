@@ -6,9 +6,9 @@
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @author    qnnp<qnnp@qnnp.me>
- * @copyright qnnp<qnnp@qnnp.me>
- * @link      https://main.qnnp.me
+ * @author    十云<author@10yun.com>
+ * @copyright 十云<author@10yun.com>
+ * @link      https://www.10yun.com/
  * @license   https://opensource.org/licenses/MIT MIT License
  */
 

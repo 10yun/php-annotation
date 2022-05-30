@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace shiyun\annotation;
 
 #[\Attribute(\Attribute::TARGET_METHOD)]
-class Route
+class SwagRoute
 {
     public function __construct(
         public $title = '',

@@ -7,9 +7,9 @@ namespace leruge;
 use leruge\annotation\Param;
 use leruge\annotation\Response;
 use leruge\annotation\Route;
-use leruge\annotation\Title;
+use leruge\annotation\SwagTitle;
 
-class DocParse
+class SwagDocParse
 {
     public function index()
     {
@@ -31,12 +31,12 @@ class DocParse
         foreach ($controllerArray as $controller) {
             // 获取反射类
             try {
-                $reflectionClass = new \ReflectionClass($controller);
+                $refClassObj = new \ReflectionClass($controller);
             } catch (\Throwable) {
                 continue;
             }
             // 获取类的Title注解
-            $classAnnotationArray = $reflectionClass->getAttributes(Title::class);
+            $classAnnotationArray = $refClassObj->getAttributes(SwagTitle::class);
             // 获取tag
             try {
                 $tag = $classAnnotationArray[0]->newInstance()->title;
@@ -44,7 +44,7 @@ class DocParse
                 $tag = $controller;
             }
             // 获取当前类的所有公共反射方法
-            $reflectionMethodArray = $reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC);
+            $reflectionMethodArray = $refClassObj->getMethods(\ReflectionMethod::IS_PUBLIC);
             foreach ($reflectionMethodArray as $reflectionMethod) {
                 // 获取Route注解实例
                 $annotationRouteArray = $reflectionMethod->getAttributes(Route::class);

@@ -6,13 +6,13 @@
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @author    qnnp<qnnp@qnnp.me>
- * @copyright qnnp<qnnp@qnnp.me>
- * @link      https://main.qnnp.me
+ * @author    十云<author@10yun.com>
+ * @copyright 十云<author@10yun.com>
+ * @link      https://www.10yun.com/
  * @license   https://opensource.org/licenses/MIT MIT License
  */
 
-namespace shiyun\annotation\Module;
+namespace shiyun\annotation;
 
 use Exception;
 use ReflectionClass;
@@ -136,11 +136,11 @@ class AutoRoute
     protected static function scanRoute(string $class, string $namespace)
     {
         /** 给定类的反射类 */
-        $ref = new ReflectionClass($class);
+        $refClassObj = new ReflectionClass($class);
         /** 获取类里的所有方法 */
-        $methods = $ref->getMethods();
+        $refClassMets = $refClassObj->getMethods();
         /** 遍历类方法 */
-        foreach ($methods as $method) {
+        foreach ($refClassMets as $method) {
 
             /** 读取方法的路由注解 */
             $attributes = $method->getAttributes(RouteAttribute::class);
@@ -161,7 +161,7 @@ class AutoRoute
                 $path = preg_replace("/^\.\//", '', isset($arguments[0]) ? $arguments[0] : $arguments['route']);
 
                 // 路由对应方法
-                $callback = $ref->name . '@' . $method->name;
+                $callback = $refClassObj->name . '@' . $method->name;
 
                 /** 相对路径子路由处理 */
                 if (!preg_match("/^[\/\\\]/", $path)) {
@@ -172,7 +172,7 @@ class AutoRoute
                         str_replace(
                             preg_replace("/^(\\\)/", '', $namespace),
                             '',
-                            $ref->name
+                            $refClassObj->name
                         )
                     );
                     // 驼峰转换
