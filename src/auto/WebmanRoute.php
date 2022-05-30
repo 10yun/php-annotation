@@ -18,10 +18,10 @@ use Exception;
 use ReflectionClass;
 use ReflectionException;
 use Webman\Route;
-use shiyun\annotation\attributes\Route as RouteAttribute;
+use shiyun\annotation\common\WebmanRoute as RouteAttribute;
 
 
-class AutoRoute
+class WebmanRoute
 {
 
     protected static bool $openapi = true;
@@ -191,11 +191,43 @@ class AutoRoute
                 $route->path = (string)$path;
 
                 /** 添加路由 */
-                $route->add($callback);
-
-                /** 添加到 OpenAPI 文档 */
-                static::$openapi && $route->addToOpenAPI();
+                $this->addRoute($callback);
             }
         }
+    }
+
+    /**
+     * <h2 style="color:#E97230;">注册路由</h2>
+     *
+     * @param mixed $callback <span style="color:#E97230;">路由调用方法</span>
+     */
+    public function addRoute(mixed $callback): RouteObject
+    {
+        $callback = RouteClass::convertToCallable($this->path, $callback);
+
+        return RouteClass::add(
+            $this->method,
+            $this->path,
+            function (Request $request, ...$parameters) use ($callback) {
+                //  应注意作用域问题！
+                $custom_validator = $this->validator;
+                $config           = $this->config;
+
+                $request->route_config = $config;
+
+                // 用户自定义验证器
+                if (is_callable($custom_validator)) {
+                    $verifiedData = $custom_validator($request, ...$parameters);
+                } else {
+                    // 默认验证器
+                    $verifiedData = Validator::validate($request, ...$parameters);
+                }
+
+                // 传递验证后的数据
+                $request->verifiedData = $verifiedData;
+
+                return $callback($request, ...$parameters);
+            }
+        )->middleware($this->middleware);
     }
 }

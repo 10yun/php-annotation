@@ -27,7 +27,7 @@ class Swagger
     public function getStaticFiles($request,  $path = null,): Response
     {
         if (empty($path) || $path == '/') $path = 'index.html';
-        $custom_file  = realpath(dirname(__DIR__) . '/public/swagger/' . $path);
+        $custom_file  = realpath(dirname(__DIR__) . '/public/swagger-webman/' . $path);
         $swagger_file = realpath(base_path() . '/vendor/swagger-api/swagger-ui/dist/' . $path);
         if (is_file($custom_file)) {
             return response('')->file($custom_file);

@@ -94,7 +94,6 @@ class OpenAPI
     {
         static::$openapi = $version;
     }
-
     static function setInfo(array $info)
     {
         static::$info = array_replace_recursive(static::$info, $info);
@@ -134,7 +133,6 @@ class OpenAPI
             ]
         );
     }
-
     public static function getComponents(): array
     {
         return static::$components;

@@ -3,7 +3,7 @@
 namespace shiyun\annotation\common;
 
 use shiyun\annotation\Container;
-use shiyun\annotation\implement\Config;
+use shiyun\annotation\common\Config;
 
 class Swagger
 {
@@ -51,7 +51,7 @@ class Swagger
     }
 
     /**
-     * 生成单挑路由请求数据
+     * 生成单条路由请求数据
      * @param array $router
      * @return array
      */

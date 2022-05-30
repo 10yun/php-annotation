@@ -1,6 +1,6 @@
 <?php
 
-namespace shiyun\annotation;
+namespace shiyun\annotation\implement;
 
 use Attribute;
 use ReflectionClass;
@@ -80,7 +80,8 @@ class Controller extends RouteRequest
     protected function initializerControllerMethodRouter(): Controller
     {
         $this->generateRouter->setRouterConfigKey($this->routerConfigKey);
-        foreach ($this->reflectionClass->getMethods() as $method) {
+        $refClassMets = $this->reflectionClass->getMethods();
+        foreach ($refClassMets as $method) {
             if (!$method->isPublic()) $method->setAccessible(true);
             $router = $this->generateRouter
                 ->setParentRule($this->rule)

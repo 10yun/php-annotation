@@ -18,7 +18,6 @@ class Annotation extends AnnotationAbstract
 {
 
     use Cache;
-
     protected array $defaultConfig = [
         // 需要读取的目录 <root_dir_path>/<dir_name*>
         'namespaces' => [],

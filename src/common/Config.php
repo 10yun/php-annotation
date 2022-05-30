@@ -1,6 +1,6 @@
 <?php
 
-namespace shiyun\annotation\config;
+namespace shiyun\annotation\common;
 
 class Config
 {
