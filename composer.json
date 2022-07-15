@@ -11,8 +11,8 @@
         }
     ],
     "homepage": "https://github.com/10yun/php-annotation",
-    "minimum-stability": "dev",
     "require": {
+        "php": "^7.0",
         "topthink/framework": "^6.0",
         "doctrine/annotations": "^1.6",
         "php-di/phpdoc-reader": "^2.1",
